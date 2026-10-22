@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "__Name__",
+    "slug": "__slug__",
+    "scheme": "__slug__",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": { "bundleIdentifier": "com.krizaka.__slug__", "supportsTablet": false, "infoPlist": { "ITSAppUsesNonExemptEncryption": false } },
+    "android": { "package": "com.krizaka.__slug__" },
+    "plugins": ["expo-router", "expo-secure-store", "expo-localization", "./plugins/with-release-signing"],
+    "experiments": { "typedRoutes": true }
+  }
+}
