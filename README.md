@@ -21,7 +21,7 @@ A product inside a monorepo (`apps/mobile`) takes this folder as `apps/mobile` a
 | `src/config.ts` | The wiring: discovery (the signed manifest of krizaka.com), session in the Keychain / Keystore, API client |
 | `app/_layout.tsx` | Theme (the product's brand, light and dark, safe areas), discovery, queries, language |
 | `plugins/with-release-signing.js` | Signs the Android release with the upload key named by the environment (tested) |
-| `.github/workflows/ci.yml` | The org's `expo-ci` (lint, types, tests, bundle export, `expo-doctor`) |
+| `.github/workflows/ci.yml` | The org's `expo-ci` (lint, types, tests, bundle export, `expo-doctor` on a trial app filled by `scripts/trial.mjs`) |
 | `.maestro/smoke.yaml` | The first screen opens, on a simulator |
 
 ## Builds and stores

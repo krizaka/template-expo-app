@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit",
     "test": "jest && node --test scripts/init.test.mjs",
     "export": "expo export --platform ios --platform android",
-    "doctor": "npx --yes expo-doctor"
+    "doctor": "node scripts/trial.mjs"
   },
   "dependencies": {
     "@krizaka/app-client": "^0.1.0",

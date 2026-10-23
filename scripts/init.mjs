@@ -18,10 +18,10 @@ export function fill(text, slug, name) {
   return text.replaceAll("__slug__", slug).replaceAll("__Name__", name);
 }
 
-function textFiles() {
-  return execFileSync("git", ["ls-files"], { encoding: "utf8" })
+export function textFiles(cwd = process.cwd()) {
+  return execFileSync("git", ["ls-files"], { cwd, encoding: "utf8" })
     .split("\n")
-    .filter((f) => f && !/\.(png|jpe?g|ico|icns|woff2?|ttf|lock)$/.test(f) && !f.startsWith("LICENSE") && f !== "scripts/init.mjs" && f !== "scripts/init.test.mjs" && f !== "pnpm-lock.yaml");
+    .filter((f) => f && !/\.(png|jpe?g|ico|icns|woff2?|ttf|lock)$/.test(f) && !f.startsWith("LICENSE") && f !== "scripts/init.mjs" && f !== "scripts/init.test.mjs" && f !== "scripts/trial.mjs" && f !== "pnpm-lock.yaml");
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
