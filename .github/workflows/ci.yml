@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+# The org's reusable Expo pipeline (krizaka/.github expo-ci.yml): lint, types, unit tests and the iOS + Android bundle export,
+# side by side. No `eas-profile`: store builds are made locally (eas build --local), never in the cloud, never per pull request.
+jobs:
+  ci:
+    permissions:
+      contents: read
+    uses: krizaka/.github/.github/workflows/expo-ci.yml@5a6ae3ac28625b1dd1d1468ca31b44dddd133094 # main
+    with:
+      package-manager: pnpm
+      extra-scripts: |
+        export
+        doctor

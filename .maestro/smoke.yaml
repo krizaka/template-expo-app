@@ -1,0 +1,6 @@
+# The first screen opens: maestro test .maestro/smoke.yaml (a simulator with the app installed).
+appId: com.krizaka.__slug__
+---
+- launchApp:
+    clearState: true
+- assertVisible: "__Name__"

@@ -1,0 +1,4 @@
+{
+  "app": { "name": "__Name__", "tagline": "To fill in: one sentence on what __Name__ does." },
+  "common": { "retry": "Try again", "offline": "__Name__ is not answering. Check your connection." }
+}
